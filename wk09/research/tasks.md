@@ -1,23 +1,6 @@
 # Evaluation Tasks — Week 9
 
-## Task 1: Filter and Complete
-**Scenario**: You've just finished your COMP2850 HCI lab write-up.
-
-**Instructions**:
-1. Find the task titled "Write HCI lab notes"
-2. Mark it as complete
-3. Verify it's marked correctly
-
-**Success criteria**:
-- Participant finds correct task within 30 seconds
-- Toggle works (checkbox/button responds)
-- Visual confirmation shown (strikethrough, badge, status message)
-
-**Inclusion focus**: Keyboard access, screen reader announcement
-
----
-
-## Task 2: Add New Task
+## Task 1: Add New Task
 **Scenario**: You've just been assigned a new coursework deadline.
 
 **Instructions**:
@@ -33,7 +16,7 @@
 
 ---
 
-## Task 3: Edit Task Inline
+## Task 2: Edit Task Inline
 **Scenario**: You made a typo in a task title.
 
 **Instructions**:
@@ -50,7 +33,7 @@
 
 ---
 
-## Task 4: Delete Completed Task
+## Task 3: Delete Completed Task
 **Scenario**: You've completed "Email supervisor" and want to remove it.
 
 **Instructions**:
