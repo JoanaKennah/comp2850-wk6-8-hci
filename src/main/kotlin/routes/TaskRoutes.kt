@@ -312,11 +312,19 @@ private suspend fun ApplicationCall.handleEditTask(store: TaskStore) {
 
     if (isHtmxRequest()) {
         // HTMX: return inline edit fragment
-        val html = renderTemplate("tasks/_edit.peb", mapOf("task" to task.toPebbleContext()))
+        val html = renderTemplate(
+            "tasks/_edit.peb",
+            mapOf("task" to task.toPebbleContext())
+        )
         respondText(html, ContentType.Text.Html)
+
     } else {
-        // No-JS: redirect to list (would need edit mode support in index)
-        respondRedirect("/tasks")
+        // No-JS: render full-page edit screen
+        val html = renderTemplate(
+            "tasks/edit_full.peb",
+            mapOf("task" to task.toPebbleContext())
+        )
+        respondText(html, ContentType.Text.Html)
     }
 }
 
@@ -347,8 +355,12 @@ private suspend fun ApplicationCall.handleUpdateTask(store: TaskStore) {
             ))
             respondText(html, ContentType.Text.Html)
         } else {
-            // No-JS: redirect back (would need error handling)
-            respondRedirect("/tasks")
+            // No-JS: render full-page edit form with error
+            val html = renderTemplate("tasks/edit_full.peb", mapOf(
+                "task" to task.toPebbleContext(),
+                "error" to validation.message
+            ))
+            respondText(html, ContentType.Text.Html)
         }
         return
     }
